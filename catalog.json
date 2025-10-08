@@ -1,0 +1,83 @@
+{
+  "repository": "hai-network-tests",
+  "description": "Presidio Federal HAI Network Validation Test Catalog",
+  "version": "1.0.1",
+  "maintainer": "Presidio Federal HAI Team",
+  "last_updated": "2025-10-08T16:45:00Z",
+  "categories": {
+    "general": {
+      "description": "Generic validation tests applicable across all platforms (e.g., NTP, DNS, syslog, management access).",
+      "platforms": {
+        "multi": {
+          "path": "general",
+          "tests": [
+            {
+              "name": "general_ntp_test.py",
+              "description": "Verify that devices have at least two reachable NTP servers configured and synchronized.",
+              "tags": ["ntp", "time", "synchronization", "baseline"],
+              "controls": [],
+              "estimated_runtime": "fast"
+            }
+          ]
+        }
+      }
+    },
+    "csfc": {
+      "description": "Commercial Solutions for Classified (CSfC) test suites for approved architecture components.",
+      "platforms": {
+        "eg-dr": {
+          "path": "csfc/eg-dr",
+          "tests": [
+            {
+              "name": "test_eg_dr_1.py",
+              "description": "Validate CSfC EG Data-in-Transit (DR) component configuration compliance.",
+              "tags": ["csfc", "eg-dr", "encryption", "vpn"],
+              "controls": [],
+              "estimated_runtime": "medium"
+            }
+          ]
+        },
+        "eg-fw": {
+          "path": "csfc/eg-fw",
+          "tests": [
+            {"name": "test_eg_fw_1.py", "description": "Edge Firewall CSfC compliance test 1.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_2.py", "description": "Edge Firewall CSfC compliance test 2.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_3.py", "description": "Edge Firewall CSfC compliance test 3.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_4.py", "description": "Edge Firewall CSfC compliance test 4.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_5.py", "description": "Edge Firewall CSfC compliance test 5.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_6.py", "description": "Edge Firewall CSfC compliance test 6.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_11.py", "description": "Edge Firewall CSfC compliance test 11.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_12.py", "description": "Edge Firewall CSfC compliance test 12.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_13.py", "description": "Edge Firewall CSfC compliance test 13.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_15.py", "description": "Edge Firewall CSfC compliance test 15.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_16.py", "description": "Edge Firewall CSfC compliance test 16.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_19.py", "description": "Edge Firewall CSfC compliance test 19.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_20.py", "description": "Edge Firewall CSfC compliance test 20.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
+            {"name": "test_eg_fw_21.py", "description": "Edge Firewall CSfC compliance test 21.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"}
+          ]
+        }
+      }
+    },
+    "stig": {
+      "description": "DISA STIG and hardening validation tests for supported platforms.",
+      "platforms": {
+        "ios-xe-switch-ndm": {
+          "path": "stig/ios-xe-switch-ndm",
+          "tests": [
+            {
+              "name": "CISC-ND-001210.py",
+              "description": "Ensure SSH version 2 and FIPS-approved encryption algorithms are configured instead of insecure protocols like Telnet or HTTP.",
+              "stig_id": "CISC-ND-001210",
+              "finding_id": "V-220556",
+              "rule_id": "SV-220556r961557_rule",
+              "severity": "High",
+              "stig_date": "2025-02-20",
+              "tags": ["ssh", "encryption", "stig", "fips"],
+              "estimated_runtime": "fast"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

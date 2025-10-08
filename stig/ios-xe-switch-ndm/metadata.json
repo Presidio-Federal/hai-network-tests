@@ -1,0 +1,18 @@
+{
+  "platform": "ios-xe-switch-ndm",
+  "category": "STIG",
+  "controls": [
+    {
+      "stig_id": "CISC-ND-001210",
+      "finding_id": "V-220556",
+      "rule_id": "SV-220556r961557_rule",
+      "ia_controls": [],
+      "severity": "High",
+      "title": "Use Secure Protocols for Remote Access",
+      "description": "Ensure SSH version 2 and FIPS-approved encryption algorithms are configured instead of insecure protocols like Telnet or HTTP.",
+      "check_text": "Verify 'ip ssh version 2' and 'ip ssh server algorithm encryption aes256-ctr aes192-ctr aes128-ctr' are present.",
+      "fix_text": "Configure the device to use FIPS-approved algorithms as per the STIG guidance.",
+      "stig_date": "2025-02-20"
+    }
+  ]
+}
