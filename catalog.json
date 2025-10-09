@@ -9,6 +9,13 @@
           "platform": "all",
           "vendor": "all",
           "estimated_runtime": 5
+        },
+        {
+          "name": "test_ntp_servers.py",
+          "description": "Validate NTP servers configuration",
+          "platform": "all",
+          "vendor": "all",
+          "estimated_runtime": 5
         }
       ]
     },
@@ -33,6 +40,116 @@
           "severity": "High",
           "stig_id": "CISC-ND-001200",
           "finding_id": "V-215844",
+          "estimated_runtime": 5
+        }
+      ]
+    },
+    {
+      "name": "csfc",
+      "tests": [
+        {
+          "name": "test_eg_dr_1.py",
+          "description": "CSfC Data Router Test 1",
+          "platform": "eg-dr",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_1.py",
+          "description": "CSfC Firewall Test 1",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_2.py",
+          "description": "CSfC Firewall Test 2",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_3.py",
+          "description": "CSfC Firewall Test 3",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_4.py",
+          "description": "CSfC Firewall Test 4",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_5.py",
+          "description": "CSfC Firewall Test 5",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_6.py",
+          "description": "CSfC Firewall Test 6",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_11.py",
+          "description": "CSfC Firewall Test 11",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_12.py",
+          "description": "CSfC Firewall Test 12",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_13.py",
+          "description": "CSfC Firewall Test 13",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_15.py",
+          "description": "CSfC Firewall Test 15",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_16.py",
+          "description": "CSfC Firewall Test 16",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_19.py",
+          "description": "CSfC Firewall Test 19",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_20.py",
+          "description": "CSfC Firewall Test 20",
+          "platform": "eg-fw",
+          "vendor": "cisco",
+          "estimated_runtime": 5
+        },
+        {
+          "name": "test_eg_fw_21.py",
+          "description": "CSfC Firewall Test 21",
+          "platform": "eg-fw",
+          "vendor": "cisco",
           "estimated_runtime": 5
         }
       ]
