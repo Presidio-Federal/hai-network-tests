@@ -1,18 +1,20 @@
 {
   "repository": "hai-network-tests",
   "description": "Presidio Federal HAI Network Validation Test Catalog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "maintainer": "Presidio Federal HAI Team",
-  "last_updated": "2025-10-08T16:45:00Z",
-  "categories": {
-    "general": {
+  "last_updated": "2025-10-08T18:45:00Z",
+  "categories": [
+    {
+      "name": "general",
       "description": "Generic validation tests applicable across all platforms (e.g., NTP, DNS, syslog, management access).",
-      "platforms": {
-        "multi": {
+      "platforms": [
+        {
+          "name": "multi",
           "path": "general",
           "tests": [
             {
-              "name": "general_ntp_test.py",
+              "name": "test_ntp_servers.py",
               "description": "Verify that devices have at least two reachable NTP servers configured and synchronized.",
               "tags": ["ntp", "time", "synchronization", "baseline"],
               "controls": [],
@@ -20,12 +22,14 @@
             }
           ]
         }
-      }
+      ]
     },
-    "csfc": {
+    {
+      "name": "csfc",
       "description": "Commercial Solutions for Classified (CSfC) test suites for approved architecture components.",
-      "platforms": {
-        "eg-dr": {
+      "platforms": [
+        {
+          "name": "eg-dr",
           "path": "csfc/eg-dr",
           "tests": [
             {
@@ -37,7 +41,8 @@
             }
           ]
         },
-        "eg-fw": {
+        {
+          "name": "eg-fw",
           "path": "csfc/eg-fw",
           "tests": [
             {"name": "test_eg_fw_1.py", "description": "Edge Firewall CSfC compliance test 1.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"},
@@ -56,16 +61,18 @@
             {"name": "test_eg_fw_21.py", "description": "Edge Firewall CSfC compliance test 21.", "tags": ["csfc", "eg-fw"], "controls": [], "estimated_runtime": "medium"}
           ]
         }
-      }
+      ]
     },
-    "stig": {
+    {
+      "name": "stig",
       "description": "DISA STIG and hardening validation tests for supported platforms.",
-      "platforms": {
-        "ios-xe-switch-ndm": {
+      "platforms": [
+        {
+          "name": "ios-xe-switch-ndm",
           "path": "stig/ios-xe-switch-ndm",
           "tests": [
             {
-              "name": "CISC-ND-001210.py",
+              "name": "test-CISC-ND-001210.py",
               "description": "Ensure SSH version 2 and FIPS-approved encryption algorithms are configured instead of insecure protocols like Telnet or HTTP.",
               "stig_id": "CISC-ND-001210",
               "finding_id": "V-220556",
@@ -77,7 +84,7 @@
             }
           ]
         }
-      }
+      ]
     }
-  }
+  ]
 }
