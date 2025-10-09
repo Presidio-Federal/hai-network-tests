@@ -16,6 +16,13 @@
           "platform": "all",
           "vendor": "all",
           "estimated_runtime": 5
+        },
+        {
+          "name": "test_no_cleartext_passwords.py",
+          "description": "Validate no cleartext passwords in configurations",
+          "platform": "all",
+          "vendor": "all",
+          "estimated_runtime": 10
         }
       ]
     },
