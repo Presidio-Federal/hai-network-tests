@@ -2,162 +2,71 @@
   "categories": [
     {
       "name": "general",
+      "description": "General network tests for all devices",
+      "tags": ["network", "connectivity", "general"],
       "tests": [
         {
-          "name": "test_ntp_server.py",
-          "description": "Validate NTP server configuration",
-          "platform": "all",
-          "vendor": "all",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_ntp_servers.py",
-          "description": "Validate NTP servers configuration",
-          "platform": "all",
-          "vendor": "all",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_no_cleartext_passwords.py",
-          "description": "Validate no cleartext passwords in configurations",
-          "platform": "all",
-          "vendor": "all",
-          "estimated_runtime": 10
-        }
-      ]
-    },
-    {
-      "name": "stig",
-      "tests": [
-        {
-          "name": "test-CISC-ND-001210.py",
-          "description": "Validate SSH configuration for secure protocols",
-          "platform": "ios-xe-switch-ndm",
-          "vendor": "cisco",
-          "severity": "High",
-          "stig_id": "CISC-ND-001210",
-          "finding_id": "V-215845",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test-CISC-ND-001200.py",
-          "description": "Validate FIPS-validated HMAC for remote maintenance sessions",
-          "platform": "ios-xe-switch-ndm",
-          "vendor": "cisco",
-          "severity": "High",
-          "stig_id": "CISC-ND-001200",
-          "finding_id": "V-215844",
-          "estimated_runtime": 5
+          "id": "test-general-ntp",
+          "name": "NTP Configuration Test",
+          "description": "Validates that NTP is properly configured on network devices",
+          "severity": "Medium",
+          "runtime": "pytest",
+          "platform": "all"
         }
       ]
     },
     {
       "name": "csfc",
-      "tests": [
+      "description": "Commercial Solutions for Classified (CSfC) compliance tests",
+      "tags": ["compliance", "security", "csfc"],
+      "tests": []
+    },
+    {
+      "name": "stig",
+      "description": "Security Technical Implementation Guide compliance tests",
+      "tags": ["compliance", "security", "stig"],
+      "platforms": [
         {
-          "name": "test_eg_dr_1.py",
-          "description": "CSfC Data Router Test 1",
-          "platform": "eg-dr",
-          "vendor": "cisco",
-          "estimated_runtime": 5
+          "name": "ios-xe-switch-ndm",
+          "description": "Tests for Cisco IOS-XE Switch Network Device Management",
+          "tests": [
+            {
+              "id": "test-CISC-ND-001210",
+              "name": "SSH Security Protocol Test",
+              "description": "Validates that SSH version 2 and FIPS-approved algorithms are configured",
+              "severity": "High",
+              "runtime": "pytest",
+              "stig_id": "CISC-ND-001210",
+              "finding_id": "V-220556",
+              "rule_id": "SV-220556r961557_rule"
+            },
+            {
+              "id": "test-CISC-ND-001220",
+              "name": "SSH Timeout Test",
+              "description": "Validates that SSH timeout is set to 60 seconds or less",
+              "severity": "Medium",
+              "runtime": "pytest",
+              "stig_id": "CISC-ND-001220",
+              "finding_id": "V-220557",
+              "rule_id": "SV-220557r961557_rule"
+            }
+          ]
         },
         {
-          "name": "test_eg_fw_1.py",
-          "description": "CSfC Firewall Test 1",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_2.py",
-          "description": "CSfC Firewall Test 2",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_3.py",
-          "description": "CSfC Firewall Test 3",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_4.py",
-          "description": "CSfC Firewall Test 4",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_5.py",
-          "description": "CSfC Firewall Test 5",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_6.py",
-          "description": "CSfC Firewall Test 6",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_11.py",
-          "description": "CSfC Firewall Test 11",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_12.py",
-          "description": "CSfC Firewall Test 12",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_13.py",
-          "description": "CSfC Firewall Test 13",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_15.py",
-          "description": "CSfC Firewall Test 15",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_16.py",
-          "description": "CSfC Firewall Test 16",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_19.py",
-          "description": "CSfC Firewall Test 19",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_20.py",
-          "description": "CSfC Firewall Test 20",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
-        },
-        {
-          "name": "test_eg_fw_21.py",
-          "description": "CSfC Firewall Test 21",
-          "platform": "eg-fw",
-          "vendor": "cisco",
-          "estimated_runtime": 5
+          "name": "ios-xe-router-ndm",
+          "description": "Tests for Cisco IOS-XE Router Network Device Management",
+          "tests": [
+            {
+              "id": "test-CISC-ND-000620",
+              "name": "Password Encryption Test",
+              "description": "Validates that the Cisco router only stores cryptographic representations of passwords",
+              "severity": "High",
+              "runtime": "pytest",
+              "stig_id": "CISC-ND-000620",
+              "finding_id": "V-215687",
+              "rule_id": "SV-215687r991830_rule"
+            }
+          ]
         }
       ]
     }
