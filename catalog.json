@@ -65,6 +65,16 @@
               "stig_id": "CISC-ND-000620",
               "finding_id": "V-215687",
               "rule_id": "SV-215687r991830_rule"
+            },
+            {
+              "id": "test-CISC-ND-000720",
+              "name": "Connection Timeout Test",
+              "description": "Validates that the Cisco router is configured to terminate all network connections associated with device management after five minutes of inactivity",
+              "severity": "Medium",
+              "runtime": "pytest",
+              "stig_id": "CISC-ND-000720",
+              "finding_id": "V-215688",
+              "rule_id": "SV-215688r961068_rule"
             }
           ]
         }
