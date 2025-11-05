@@ -2,83 +2,63 @@
   "categories": [
     {
       "name": "general",
-      "description": "General network tests for all devices",
-      "tags": ["network", "connectivity", "general"],
+      "description": "General network configuration tests",
       "tests": [
         {
-          "id": "test-general-ntp",
-          "name": "NTP Configuration Test",
-          "description": "Validates that NTP is properly configured on network devices",
-          "severity": "Medium",
+          "id": "test_no_cleartext_passwords",
+          "name": "No cleartext passwords",
+          "description": "Check that no cleartext passwords are used in the configuration",
+          "severity": "critical",
           "runtime": "pytest",
-          "platform": "all"
+          "tags": ["security", "password", "cleartext"]
+        },
+        {
+          "id": "test_ntp_servers",
+          "name": "NTP servers",
+          "description": "Check that NTP servers are configured",
+          "severity": "medium",
+          "runtime": "pytest",
+          "tags": ["ntp", "time", "configuration"]
         }
       ]
     },
     {
       "name": "csfc",
       "description": "Commercial Solutions for Classified (CSfC) compliance tests",
-      "tags": ["compliance", "security", "csfc"],
       "tests": []
     },
     {
       "name": "stig",
-      "description": "Security Technical Implementation Guide compliance tests",
-      "tags": ["compliance", "security", "stig"],
+      "description": "Security Technical Implementation Guide (STIG) compliance tests",
       "platforms": [
         {
-          "name": "ios-xe-switch-ndm",
-          "description": "Tests for Cisco IOS-XE Switch Network Device Management",
+          "name": "ios-xe-router-ndm",
+          "description": "Cisco IOS-XE Router NDM STIG",
           "tests": [
             {
               "id": "test-CISC-ND-001210",
-              "name": "SSH Security Protocol Test",
-              "description": "Validates that SSH version 2 and FIPS-approved algorithms are configured",
-              "severity": "High",
+              "name": "SSH Version 2 and Password Security",
+              "description": "Ensure SSH version 2 is configured and no clear text passwords are used on VTY lines",
+              "severity": "high",
               "runtime": "pytest",
+              "tags": ["security", "ssh", "password", "vty", "STIG"],
               "stig_id": "CISC-ND-001210",
               "finding_id": "V-220556",
               "rule_id": "SV-220556r961557_rule"
-            },
-            {
-              "id": "test-CISC-ND-001220",
-              "name": "SSH Timeout Test",
-              "description": "Validates that SSH timeout is set to 60 seconds or less",
-              "severity": "Medium",
-              "runtime": "pytest",
-              "stig_id": "CISC-ND-001220",
-              "finding_id": "V-220557",
-              "rule_id": "SV-220557r961557_rule"
             }
           ]
         },
         {
-          "name": "ios-xe-router-ndm",
-          "description": "Tests for Cisco IOS-XE Router Network Device Management",
-          "tests": [
-            {
-              "id": "test-CISC-ND-000620",
-              "name": "Password Encryption Test",
-              "description": "Validates that the Cisco router only stores cryptographic representations of passwords",
-              "severity": "High",
-              "runtime": "pytest",
-              "stig_id": "CISC-ND-000620",
-              "finding_id": "V-215687",
-              "rule_id": "SV-215687r991830_rule"
-            },
-            {
-              "id": "test-CISC-ND-000720",
-              "name": "Connection Timeout Test",
-              "description": "Validates that the Cisco router is configured to terminate all network connections associated with device management after five minutes of inactivity",
-              "severity": "Medium",
-              "runtime": "pytest",
-              "stig_id": "CISC-ND-000720",
-              "finding_id": "V-215688",
-              "rule_id": "SV-215688r961068_rule"
-            }
-          ]
+          "name": "ios-xe-switch-ndm",
+          "description": "Cisco IOS-XE Switch NDM STIG",
+          "tests": []
         }
       ]
+    },
+    {
+      "name": "purdue",
+      "description": "Purdue Model compliance tests",
+      "tests": []
     }
   ]
 }
