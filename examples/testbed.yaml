@@ -1,0 +1,67 @@
+# ==============================================================================
+# PyATS Testbed Template
+# ==============================================================================
+#
+# Instructions:
+#   1. Copy this file and rename it (e.g., my_lab_testbed.yaml)
+#   2. Fill in your device details below
+#   3. Push to the testbed directory in your GitHub repo
+#   4. Use pyats_list_testbed_files to see it, then pyats_sync_testbed to load it
+#
+# Supported OS types:
+#   iosxe, iosxr, nxos, asa, junos, eos, linux
+#
+# Supported connection protocols:
+#   ssh, telnet
+#
+# ==============================================================================
+
+testbed:
+  name: my_lab_testbed
+
+devices:
+  # ----- Device 1 -----
+  router1:
+    os: iosxe
+    type: router
+    connections:
+      default:
+        protocol: ssh
+        ip: 192.168.1.1
+        port: 22
+    credentials:
+      default:
+        username: admin
+        password: changeme
+      enable:
+        password: enablepass
+
+  # ----- Device 2 -----
+  switch1:
+    os: nxos
+    type: switch
+    connections:
+      default:
+        protocol: ssh
+        ip: 192.168.1.2
+        port: 22
+    credentials:
+      default:
+        username: admin
+        password: changeme
+
+  # ----- Add more devices below -----
+  # device_name:
+  #   os: iosxe
+  #   type: router
+  #   connections:
+  #     default:
+  #       protocol: ssh
+  #       ip: 10.0.0.1
+  #       port: 22
+  #   credentials:
+  #     default:
+  #       username: admin
+  #       password: changeme
+  #     enable:
+  #       password: enablepass
